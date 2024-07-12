@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { RouterProvider } from "react-router-dom";
 import { Provider as ReduxProvider } from "react-redux";
-import { store } from "./global/Store"; // Import your store
+import { store } from "./global/Store";
 import { mainRouter } from "./router/mainRouter";
 import { ContextProvider } from "./global/ContextProvider";
 
