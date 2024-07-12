@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../global/ContextProvider";
 import { Link } from "react-router-dom";
-import { FaHome, FaUser, FaBars } from "react-icons/fa";
+import { FaHome, FaBars } from "react-icons/fa";
 import { IoCreateSharp } from "react-icons/io5";
 
 const Sidebar = () => {
@@ -14,14 +14,12 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Icon for toggling sidebar on small screens */}
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button onClick={handleSidebarToggle} className="text-black">
           <FaBars size={20} />
         </button>
       </div>
 
-      {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full transition-transform duration-300 bg-gray-800 text-white ${
           isSidebarOpen
@@ -40,13 +38,7 @@ const Sidebar = () => {
               <FaHome className="mr-4" />
               {toggle && <span className="text-[14px]">Home</span>}
             </Link>
-            {/* <Link
-              to="/profile"
-              className="flex items-center text-lg transition-colors duration-300 hover:text-gray-400"
-            >
-              <FaUser className="mr-4" />
-              {toggle && <span className="text-[14px]">Profile</span>}
-            </Link> */}
+
             <Link
               to="/org"
               className="flex items-center text-lg transition-colors duration-300 hover:text-gray-400"
@@ -60,7 +52,6 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {/* Overlay for small screens */}
       {isSidebarOpen && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-40 lg:hidden"

@@ -1,8 +1,5 @@
 import { useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
-import { AiOutlineLike } from "react-icons/ai";
-import { BsThreeDotsVertical } from "react-icons/bs";
-import { MdBookmark, MdLink } from "react-icons/md";
 import { getWebData } from "../../Api/Api";
 import AddOrganizationForm from "./AddOrganizationForm";
 import OrganizationCard from "./OrganizationCard";
