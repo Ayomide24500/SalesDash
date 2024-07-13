@@ -14,7 +14,7 @@ const LandingPage = () => {
           </p>
           <Link
             to="/register"
-            className="bg-white text-red-800 px-6 py-3 rounded hover:bg-red-500"
+            className="bg-white text-red-800 px-6 py-3 rounded hover:bg-red-100"
           >
             Register
           </Link>
