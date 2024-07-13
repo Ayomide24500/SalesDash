@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
-    <div className="bg-blue-950 min-h-screen flex items-center justify-center">
+    <div className="bg-red-800 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md lg:w-full w-[85%] max-w-md">
-        <h2 className="text-2xl font-bold mb-4">Update your Account</h2>
+        <h2 className="lg:text-2xl text-xl font-bold mb-4">
+          Update your Account
+        </h2>
         <form>
           <div className="mb-4">
             <label className="block text-gray-700">Email</label>
@@ -22,14 +24,14 @@ const Register = () => {
           </div>
           <button
             type="submit"
-            className="bg-blue-800 text-white px-4 py-2 rounded w-full"
+            className="bg-red-800 text-white px-4 py-2 rounded w-full"
           >
             Update Password
           </button>
         </form>
         <p className="mt-4 text-gray-600">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-800">
+          <Link to="/login" className="text-red-800">
             Login
           </Link>
         </p>

@@ -16,21 +16,21 @@ const OrganizationCard: FC<iProp> = ({ props }) => {
     <div>
       <div
         key={props.id}
-        className="w-full min-h-4 rounded-lg h-auto p-4 text-sm border transition-shadow duration-300 bg-white flex items-center cursor-pointer"
+        className="w-full lg:h-[80px] rounded-lg p-4 text-sm border transition-shadow duration-300 bg-white flex items-center cursor-pointer z-50"
       >
         <div className="flex-1" onClick={toggleDropdown}>
           <div className="flex lg:justify-around lg:items-center flex-col lg:flex-row">
-            <div className="text-lg font-bold">
-              <div className="text-gray-400">Organization Name:</div>{" "}
-              {props.organizationName}
+            <div className="text-md font-bold">
+              <div className="text-red-800">Organization Name:</div>{" "}
+              <p className="text-[14px]">{props.organizationName}</p>
             </div>
-            <div className="text-gray-700 my-2">
-              <div className="text-gray-400 text-[14px] font-bold">Code:</div>
-              {props.code}
+            <div className="my-2 text-md">
+              <div className="text-red-800 font-bold">Code:</div>
+              <p className="text-[17px]">{props.code}</p>
             </div>
-            <div className="text-gray-700 my-2">
-              <div className="text-gray-400 text-[14px] font-bold">Email:</div>
-              {props.email}
+            <div className="my-2 text-md">
+              <div className="text-red-800 font-bold">Email:</div>
+              <p className="text-[17px]">{props.email}</p>
             </div>
             <div>20 Mins Ago</div>
           </div>

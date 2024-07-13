@@ -11,8 +11,8 @@ const DashboardLayout = () => {
   return (
     <div className="flex transition-all duration-400">
       <div
-        className={`fixed transition-all duration-300 h-[100vh] ${
-          toggle ? "w-[200px]" : "w-[80px]"
+        className={`lg:fixed transition-all duration-300 w-full h-[100vh] ${
+          toggle ? "lg:w-[200px]" : "lg:w-[80px]"
         }`}
         onMouseEnter={() => {
           setToggled(true);
@@ -21,7 +21,7 @@ const DashboardLayout = () => {
           setToggled(false);
         }}
       >
-        <div className="absolute -right-2 top-16 z-10">
+        <div className="absolute -right-2 top-16 z-10 lg:block hidden">
           {toggled && <ToggleButton />}
         </div>
         <Sidebar />

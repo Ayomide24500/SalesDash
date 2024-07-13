@@ -9,17 +9,17 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-full bg-gray-800 text-white ${
-        toggle ? "lg:w-[200px]" : "lg:w-[80px]"
-      } w-[20%] hidden lg:block`}
+      className={`lg:fixed lg:top-0 lg:left-0 lg:h-full lg:bg-red-950 lg:text-white absolute bottom-0 w-full h-[40px] bg-red-950 text-white ${
+        toggle ? "lg:w-[200px]" : "lg:w-[60px]"
+      } lg:w-[12%] lg:block flex justify-center items-center`}
     >
-      <div className="flex flex-col items-center mt-10">
-        <nav className="mt-10">
+      <div className="flex lg:flex-col lg:items-center mt-10 lg:mt-14">
+        <nav className="lg:mt-0 flex lg:flex-col space-x-4 lg:gap-0 gap-9 lg:space-x-0 mb-4 lg:mb-0">
           <Link
             to="/dashboard"
             className="flex items-center mb-6 text-lg transition-colors duration-300 hover:text-gray-400"
           >
-            <FaHome className="mr-4" />
+            <FaHome className="lg:mr-4 lg:" />
             {toggle && <span className="text-[14px]">Home</span>}
           </Link>
 
@@ -27,9 +27,9 @@ const Sidebar = () => {
             to="/org"
             className="flex items-center text-lg transition-colors duration-300 hover:text-gray-400"
           >
-            <IoCreateSharp className="mr-4 mt-8" />
+            <IoCreateSharp className="lg:mr-4 lg:mt-8 mb-5 lg:mb-0" />
             {toggle && (
-              <span className="mt-8 text-[14px]">Create Organization</span>
+              <span className="lg:mt-8 text-[14px]">Create Organization</span>
             )}
           </Link>
         </nav>

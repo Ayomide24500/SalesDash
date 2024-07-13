@@ -1,15 +1,14 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { getWebData } from "../../Api/Api";
 import AddOrganizationForm from "./AddOrganizationForm";
 import OrganizationCard from "./OrganizationCard";
-import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { changeToggleDisplay } from "../../global/reduxState";
 
 const Organization = () => {
-  const toggle = useSelector((state: any) => state.toggle);
+  const dispatch = useDispatch();
+  const toggleDisplay = useSelector((state: any) => state.toggleDisplay);
   const [data, setData] = useState([]);
-  const [showAddOrganizationForm, setShowAddOrganizationForm] = useState(false);
 
   useEffect(() => {
     getWebData().then((res: any) => {
@@ -19,23 +18,23 @@ const Organization = () => {
   }, []);
 
   const handleAddOrganizationClick = () => {
-    setShowAddOrganizationForm(true);
+    dispatch(changeToggleDisplay(true));
   };
 
   const handleCloseForm = () => {
-    setShowAddOrganizationForm(false);
+    dispatch(changeToggleDisplay(false));
   };
 
   return (
     <div>
       <div className="lg:p-2 w-full">
         <header className="flex justify-between items-center mb-4">
-          <h1 className="lg:text-2xl text-[14px] font-bold pl-4 lg:pt-0 pt-10">
+          <h1 className="lg:text-2xl text-[18px] font-bold pl-4 lg:pt-10 pt-6 ">
             Organization
           </h1>
           <button
             onClick={handleAddOrganizationClick}
-            className="bg-blue-600 text-white text-[10px] lg:text-[12px] p-2 mr-4 mt-3 lg:px-4 lg:py-2 rounded hover:bg-blue-500"
+            className="bg-red-950 text-white text-[10px] lg:text-[12px] z-50 p-2 mr-4 mt-3 lg:px-4 lg:py-2 rounded hover:bg-red-950"
           >
             Add Organization
           </button>
@@ -45,7 +44,7 @@ const Organization = () => {
             <OrganizationCard key={props.id} props={props} />
           ))}
         </div>
-        {toggle && (
+        {toggleDisplay && (
           <div className="flex w-full left-0 absolute top-0">
             <div
               className="w-[100%] h-[100vh] overflow-hidden"
@@ -55,22 +54,15 @@ const Organization = () => {
                 borderRadius: "10px",
                 border: "1px solid rgba(255, 255, 255, 0.18)",
               }}
-            ></div>
+            >
+              <AddOrganizationForm
+                show={toggleDisplay}
+                onClose={handleCloseForm}
+              />
+            </div>
           </div>
         )}
-        <AddOrganizationForm
-          show={showAddOrganizationForm}
-          onClose={handleCloseForm}
-        />
       </div>
-
-      {/* Icon link to Dashboard */}
-      <Link
-        to="/dashboard"
-        className="fixed bottom-4 right-4 text-black lg:hidden p-2 bg-gray-200 rounded-full shadow-lg"
-      >
-        <FaHome size={24} />
-      </Link>
     </div>
   );
 };
