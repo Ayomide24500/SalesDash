@@ -22,12 +22,14 @@ const Register = () => {
             <label className="block text-gray-700">New Password</label>
             <input type="password" className="w-full p-2 border rounded" />
           </div>
-          <button
-            type="submit"
-            className="bg-red-800 text-white px-4 py-2 rounded w-full"
-          >
-            Update Password
-          </button>
+          <Link to="/login">
+            <button
+              type="submit"
+              className="bg-red-800 text-white px-4 py-2 rounded w-full"
+            >
+              Update Password
+            </button>
+          </Link>
         </form>
         <p className="mt-4 text-gray-600">
           Already have an account?{" "}
