@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
-    <div className="bg-red-800 min-h-screen flex flex-col text-white">
+    <div className="bg-red-800 min-h-screen flex flex-col fixed text-white">
       <main className="flex-grow flex items-center justify-center p-8">
         <div className="text-center">
           <h2 className="text-4xl mb-4 font-bold">Welcome To Go Food</h2>

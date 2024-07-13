@@ -1,11 +1,18 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../global/ContextProvider";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaSignOutAlt } from "react-icons/fa";
 import { IoCreateSharp } from "react-icons/io5";
+import { logout } from "../global/reduxState";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
   const { toggle } = useContext(GlobalContext);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <div
@@ -31,6 +38,15 @@ const Sidebar = () => {
             {toggle && (
               <span className="lg:mt-8 text-[14px]">Create Organization</span>
             )}
+          </Link>
+
+          <Link
+            to="/register"
+            onClick={handleLogout}
+            className="flex items-center text-lg transition-colors duration-300 hover:text-gray-400"
+          >
+            <FaSignOutAlt className="lg:mr-4 lg:mt-8 mb-5 lg:mb-0" />
+            {toggle && <span className="lg:mt-8 text-[14px]">Logout</span>}
           </Link>
         </nav>
       </div>
