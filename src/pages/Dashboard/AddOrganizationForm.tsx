@@ -21,7 +21,6 @@ const AddOrganizationForm: FC<iProp> = ({ show, onClose }) => {
 
     try {
       await createWebData(newOrganization);
-      window.location.reload();
       onClose();
     } catch (error) {
       setError("Error creating organization. Please try again.");

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { getWebData } from "../../Api/Api";
 import AddOrganizationForm from "./AddOrganizationForm";
 import OrganizationCard from "./OrganizationCard";
+import { Link } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 const Organization = () => {
   const toggle = useSelector((state: any) => state.toggle);
@@ -10,7 +12,7 @@ const Organization = () => {
   const [showAddOrganizationForm, setShowAddOrganizationForm] = useState(false);
 
   useEffect(() => {
-    getWebData().then((res) => {
+    getWebData().then((res: any) => {
       console.log(res);
       setData(res);
     });
@@ -23,6 +25,11 @@ const Organization = () => {
   const handleCloseForm = () => {
     setShowAddOrganizationForm(false);
   };
+
+  const handleDelete = (id: number) => {
+    setData(data.filter((org: any) => org.id !== id));
+  };
+
   return (
     <div>
       <div className="lg:p-2 w-full">
@@ -39,11 +46,15 @@ const Organization = () => {
         </header>
         <div className="mt-10 flex flex-col gap-4 py-3 p-4">
           {data.map((props: any) => (
-            <OrganizationCard key={props.id} props={props} />
+            <OrganizationCard
+              key={props.id}
+              props={props}
+              onDelete={handleDelete}
+            />
           ))}
         </div>
         {toggle && (
-          <div className="flex w-full  left-0 absolute top-0">
+          <div className="flex w-full left-0 absolute top-0">
             <div
               className="w-[100%] h-[100vh] overflow-hidden"
               style={{
@@ -60,7 +71,16 @@ const Organization = () => {
           onClose={handleCloseForm}
         />
       </div>
+
+      {/* Icon link to Dashboard */}
+      <Link
+        to="/dashboard"
+        className="fixed bottom-4 right-4 text-black lg:hidden p-2 bg-gray-200 rounded-full shadow-lg"
+      >
+        <FaHome size={24} />
+      </Link>
     </div>
   );
 };
+
 export default Organization;

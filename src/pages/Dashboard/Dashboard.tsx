@@ -1,24 +1,31 @@
-// src/components/Dashboard.js
 import React from "react";
+import { Link } from "react-router-dom";
+import { IoCreateSharp } from "react-icons/io5";
 
 const Dashboard = () => {
   return (
     <div className="p-2">
       <p className="text-xl lg:pt-0 pt-10">Welcome Back, Ayomide</p>
       <section className="grid grid-cols-1 md:grid-cols-4 mt-20 lg:gap-0 gap-3">
-        <div className="bg-white p-4 rounded-lg shadow h-[250px] w-full lg:w-[350px]">
+        <div className="bg-white p-4 rounded-lg shadow h-[250px] w-[95%] lg:w-[370px]">
           <h2 className="text-xl font-semibold">Total Organization</h2>
-          <p className="text-8xl text-center pt-5 text-[#f30d6d]">50,000</p>
+          <p className="lg:text-8xl text-6xl lg:pt-5 p-10 text-center text-[#f30d6d]">
+            50,000
+          </p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow  h-[250px] w-full lg:w-[350px]">
+        <div className="bg-white p-4 rounded-lg shadow h-[250px] w-[95%] lg:w-[370px]">
           <h2 className="text-xl font-semibold">Total Staff</h2>
-          <p className="text-8xl text-center pt-5 text-[#9a0a50] ">1000</p>
+          <p className="lg:text-8xl text-6xl lg:pt-5 p-10 text-center text-[#9a0a50] ">
+            1000
+          </p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow h-[250px] w-full lg:w-[350px]">
+        <div className="bg-white p-4 rounded-lg shadow h-[250px] w-[95%] lg:w-[370px]">
           <h2 className="text-xl font-semibold">Remaining Budget</h2>
-          <p className="text-8xl text-center pt-5 text-[#08c421]">50,000</p>
+          <p className="lg:text-8xl text-6xl lg:pt-5 p-10 text-center text-[#08c421]">
+            50,000
+          </p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow  h-[250px] lg:w-[420px]w-full">
+        <div className="bg-white p-4 rounded-lg shadow  h-[250px] lg:w-[380px] w-full">
           <h2 className="text-xl font-semibold">Plan</h2>
           <div className="flex gap-40 mt-3">
             <div className="flex gap-2 flex-col">
@@ -32,6 +39,14 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
+
+      {/* Icon link to Organization */}
+      <Link
+        to="/org"
+        className="fixed bottom-4 right-4 text-black lg:hidden p-2 bg-gray-200 rounded-full shadow-lg"
+      >
+        <IoCreateSharp size={24} />
+      </Link>
     </div>
   );
 };
