@@ -1,26 +1,15 @@
 // src/components/OrganizationCard.js
 import React, { useState, FC } from "react";
-import { deleteWebData } from "../../Api/Api";
 
 interface iProp {
   props: any;
-  onDelete: (id: number) => void;
 }
 
-const OrganizationCard: FC<iProp> = ({ props, onDelete }) => {
+const OrganizationCard: FC<iProp> = ({ props }) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
-  };
-
-  const handleDelete = async () => {
-    try {
-      await deleteWebData(props.id);
-      onDelete(props.id);
-    } catch (error) {
-      console.error("Error deleting organization:", error);
-    }
   };
 
   return (
@@ -46,12 +35,6 @@ const OrganizationCard: FC<iProp> = ({ props, onDelete }) => {
             <div>20 Mins Ago</div>
           </div>
         </div>
-        <button
-          onClick={handleDelete}
-          className="ml-4 text-red-500 hover:text-red-700"
-        >
-          Delete
-        </button>
       </div>
       {isDropdownVisible && (
         <div className="mt-2 p-4 border rounded-lg bg-gray-100">

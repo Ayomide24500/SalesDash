@@ -26,10 +26,6 @@ const Organization = () => {
     setShowAddOrganizationForm(false);
   };
 
-  const handleDelete = (id: number) => {
-    setData(data.filter((org: any) => org.id !== id));
-  };
-
   return (
     <div>
       <div className="lg:p-2 w-full">
@@ -46,11 +42,7 @@ const Organization = () => {
         </header>
         <div className="mt-10 flex flex-col gap-4 py-3 p-4">
           {data.map((props: any) => (
-            <OrganizationCard
-              key={props.id}
-              props={props}
-              onDelete={handleDelete}
-            />
+            <OrganizationCard key={props.id} props={props} />
           ))}
         </div>
         {toggle && (

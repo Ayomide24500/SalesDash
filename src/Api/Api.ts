@@ -95,13 +95,3 @@ export const getWebData = async () => {
     }, 500);
   });
 };
-
-export const deleteWebData = async (id: any) => {
-  return new Promise((resolve: any) => {
-    setTimeout(() => {
-      dummyData = dummyData.filter((org: any) => org.id !== id);
-      saveDummyData(dummyData);
-      resolve();
-    }, 500);
-  });
-};
