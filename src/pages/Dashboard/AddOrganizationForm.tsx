@@ -10,12 +10,16 @@ interface iProp {
 const AddOrganizationForm: FC<iProp> = ({ show, onClose }) => {
   const [organizationName, setOrganizationName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newOrganization = {
       organizationName,
+      address,
+      phone,
       email,
     };
 
@@ -51,10 +55,30 @@ const AddOrganizationForm: FC<iProp> = ({ show, onClose }) => {
           <div className="mb-4">
             <label className="block text-gray-700">Email</label>
             <input
-              type="text"
+              type="email"
               className="w-full p-2 border rounded"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Phone</label>
+            <input
+              type="number"
+              className="w-full p-2 border rounded"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Address</label>
+            <input
+              type="text"
+              className="w-full p-2 border rounded"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
               required
             />
           </div>
