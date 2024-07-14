@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`lg:fixed lg:top-0 lg:left-0 lg:h-full lg:bg-red-950 lg:text-white absolute bottom-0 w-full h-[40px] bg-red-950 text-white ${
+      className={`lg:fixed lg:top-0 lg:left-0 lg:h-full lg:bg-red-950 lg:text-white fixed bottom-0 w-full h-[40px] bg-red-950 text-white ${
         toggle ? "lg:w-[200px]" : "lg:w-[60px]"
       } lg:w-[12%] lg:block flex justify-center items-center`}
     >

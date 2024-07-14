@@ -1,4 +1,4 @@
-// const url: string = `http://localhost:2211/api`;
+// const url: string = `https://go-foods-server.onrender.com/`;
 
 // export const getWebData = async () => {
 //   return await fetch(`${url}/get-web`, { method: "GET" })
@@ -11,16 +11,16 @@
 //     });
 // };
 
-// // export const createWebData = async (data: any) => {
-// //   return await fetch(`${url}/create-web`, data)
-// //     .then((res) => {
-// //       return res.json();
-// //     })
-// //     .then((res) => {
-// //       console.log(res);
-// //       return res.data;
-// //     });
-// // };
+// export const createWebData = async (data: any) => {
+//   return await fetch(`${url}/create-web`, data)
+//     .then((res) => {
+//       return res.json();
+//     })
+//     .then((res) => {
+//       console.log(res);
+//       return res.data;
+//     });
+// };
 
 // // src/Api/Api.js
 // // src/Api/Api.js
