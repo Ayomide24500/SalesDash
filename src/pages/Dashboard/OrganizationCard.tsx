@@ -16,7 +16,7 @@ const OrganizationCard: FC<iProp> = ({ props }) => {
     <div className="my-4">
       <div
         key={props.id}
-        className="w-full lg:h-auto rounded-lg p-4 text-sm border min-h-[60px] transition-shadow duration-300 bg-white flex items-center cursor-pointer shadow-md hover:shadow-lg"
+        className="w-full lg:h-auto rounded-lg p-4 text-sm border min-h-[60px] transition-shadow duration-300 bg-white flex items-center cursor-pointer shadow hover:shadow-lg"
       >
         <div className="flex-1" onClick={toggleDropdown}>
           <div className="flex flex-col lg:items-center space-y-2">
