@@ -27,7 +27,7 @@ const Organization = () => {
 
   return (
     <div>
-      <div className="lg:p-2 w-full">
+      <div className="lg:p-2 w-full mb-10">
         <header className="flex justify-between items-center mb-4">
           <h1 className="lg:text-2xl text-[18px] font-bold pl-4 lg:pt-10 pt-6 ">
             Organization
