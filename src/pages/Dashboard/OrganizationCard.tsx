@@ -1,3 +1,4 @@
+// src/components/OrganizationCard.js
 import React, { useState, FC } from "react";
 
 interface iProp {
@@ -18,24 +19,24 @@ const OrganizationCard: FC<iProp> = ({ props }) => {
         className="w-full lg:h-[80px] rounded-lg p-4 text-sm border min-h-[60px] transition-shadow duration-300 bg-white flex items-center cursor-pointer z-50"
       >
         <div className="flex-1" onClick={toggleDropdown}>
-          <div className="flex lg:justify-around lg:items-center flex-col lg:flex-row">
-            <div className="text-md font-bold flex items-center">
-              <div className="text-red-800">Org Name:</div>
-              <p className="text-[14px] ml-2">{props.organizationName}</p>
+          <div className="flex flex-wrap lg:justify-around lg:items-center">
+            <div className="flex items-center mr-4 mb-2 lg:mb-0">
+              <div className="text-red-800 font-bold">Org Name:</div>
+              <p className="text-[14px] ml-2">{props.name}</p>
             </div>
-            <div className="text-md font-bold flex items-center">
-              <div className="text-red-800">Phone:</div>
+            <div className="flex items-center mr-4 mb-2 lg:mb-0">
+              <div className="text-red-800 font-bold">Phone:</div>
               <p className="text-[14px] ml-2">{props.phone}</p>
             </div>
-            <div className="text-md font-bold flex items-center">
-              <div className="text-red-800">Address:</div>
+            <div className="flex items-center mr-4 mb-2 lg:mb-0">
+              <div className="text-red-800 font-bold">Address:</div>
               <p className="text-[14px] ml-2">{props.address}</p>
             </div>
-            <div className="my-2 text-md flex items-center">
+            <div className="flex items-center mr-4 mb-2 lg:mb-0">
               <div className="text-red-800 font-bold">Code:</div>
-              <p className="text-[17px] ml-2">{props.code}</p>
+              <p className="text-[17px] ml-2">{props.accessCode}</p>
             </div>
-            <div className="my-2 text-md flex items-center">
+            <div className="flex items-center mr-4 mb-2 lg:mb-0">
               <div className="text-red-800 font-bold">Email:</div>
               <p className="text-[17px] ml-2">{props.email}</p>
             </div>

@@ -36,6 +36,32 @@ export const login = async (data: any) => {
   }
 };
 
+export const getOrg = async () => {
+  try {
+    const res = await axios.get(
+      "https://go-foods-server.onrender.com/go-foods/organization"
+    );
+    console.log("res", res);
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching organization data:", error);
+    return [];
+  }
+};
+
+export const CreateOrg = async (data: any) => {
+  try {
+    const res = await axios.post(
+      "https://go-foods-server.onrender.com/go-foods/organization",
+      data
+    );
+    return res.data;
+  } catch (error) {
+    console.error("Error creating organization:", error);
+    return null;
+  }
+};
+
 // export const getWebData = async () => {
 //   return await fetch(`${url}W`, { method: "GET" })
 //     .then((res) => {
