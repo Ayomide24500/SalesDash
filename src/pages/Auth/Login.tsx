@@ -22,7 +22,7 @@ const Login = () => {
           toast.success("Login successful!");
           setTimeout(() => {
             navigate("/dashboard");
-          }, 2000); // Delay the navigation by 2 seconds
+          }, 2000);
         } else {
           setErrorMessage("Failed to login. Please try again.");
         }
