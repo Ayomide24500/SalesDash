@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Register from "../pages/Auth/Register";
 import Login from "../pages/Auth/Login";
 import Organization from "../pages/Dashboard/Organization";
+import Profile from "../pages/Dashboard/Profile";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ export const mainRouter = createBrowserRouter([
       {
         path: "/org",
         element: <Organization />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
     ],
   },

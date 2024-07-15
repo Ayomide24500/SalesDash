@@ -1,47 +1,22 @@
 // src/components/AddOrganizationForm.js
 import React, { useState, FC } from "react";
-import { createWebData } from "../../Api/Api";
 
 interface iProp {
   show: any;
   onClose: any;
 }
 
-const AddOrganizationForm: FC<iProp> = ({ show, onClose }) => {
+const AddOrganizationForm: FC<iProp> = ({ onClose }) => {
   const [organizationName, setOrganizationName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [error, setError] = useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const newOrganization = {
-      organizationName,
-      address,
-      phone,
-      email,
-    };
-
-    try {
-      await createWebData(newOrganization);
-      onClose();
-    } catch (error) {
-      setError("Error creating organization. Please try again.");
-      console.error("Error creating organization:", error);
-    }
-  };
-
-  if (!show) {
-    return null;
-  }
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-8 rounded shadow-lg lg:w-full w-[88%] max-w-md">
         <h2 className="text-2xl font-bold mb-4">Add Organization</h2>
-        <form onSubmit={handleSubmit}>
-          {error && <div className="text-red-500 mb-4">{error}</div>}
+        <form>
           <div className="mb-4">
             <label className="block text-gray-700">Organization Name</label>
             <input

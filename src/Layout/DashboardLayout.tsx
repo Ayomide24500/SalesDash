@@ -12,7 +12,7 @@ const DashboardLayout = () => {
     <div className="flex transition-all duration-400">
       <div
         className={`lg:fixed transition-all duration-300 w-full h-[100vh] ${
-          toggle ? "lg:w-[200px]" : "lg:w-[80px]"
+          toggle ? "lg:w-[200px]" : "lg:w-[70px]"
         }`}
         onMouseEnter={() => {
           setToggled(true);
@@ -30,7 +30,7 @@ const DashboardLayout = () => {
       <div className="w-full flex justify-end transition-all duration-300">
         <div
           className={`min-h-[10vh] transition-all duration-300 w-[100vw] ${
-            toggle ? "lg:w-[calc(100vw-230px)]" : "lg:w-[calc(100vw-110px)]"
+            toggle ? "lg:w-[calc(100vw-200px)]" : "lg:w-[calc(100vw-79px)]"
           }`}
         >
           <Outlet />

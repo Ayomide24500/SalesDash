@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className="p-2 lg:w-[95%] lg:h-[100%] -mt-9 lg:mt-0">
+    <div className="p-2 lg:w-[100%] lg:h-[100%] -mt-9 lg:mt-0">
       <p className="text-[17px] lg:pt-10 pt-10 pl-4">
         Welcome Back, <span className="font-bold">Ayomide</span>
       </p>

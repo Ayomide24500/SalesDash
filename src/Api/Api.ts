@@ -1,7 +1,43 @@
-// const url: string = `https://go-foods-server.onrender.com/`;
+const url: string = `https://go-foods-server.onrender.com/go-foods/sales-person/update-credentials`;
+import axios from "axios";
+
+export const updatePass = async (data: any) => {
+  const token = localStorage.getItem("authToken");
+
+  try {
+    const res = await axios.patch(url, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(res);
+    return res;
+  } catch (error: any) {
+    console.error(error);
+    return error.response
+      ? error.response.data
+      : { error: "An error occurred" };
+  }
+};
+
+export const login = async (data: any) => {
+  try {
+    const res = await axios.post(
+      "https://go-foods-server.onrender.com/go-foods/sales-person/login",
+      data
+    );
+    console.log("res", res);
+    return res;
+  } catch (error: any) {
+    console.error(error);
+    return error.response
+      ? error.response.data
+      : { error: "An error occurred" };
+  }
+};
 
 // export const getWebData = async () => {
-//   return await fetch(`${url}/get-web`, { method: "GET" })
+//   return await fetch(`${url}W`, { method: "GET" })
 //     .then((res) => {
 //       return res.json();
 //     })
@@ -12,7 +48,7 @@
 // };
 
 // export const createWebData = async (data: any) => {
-//   return await fetch(`${url}/create-web`, data)
+//   return await axios.PATCH(`${url}`, data)
 //     .then((res) => {
 //       return res.json();
 //     })
@@ -22,8 +58,6 @@
 //     });
 // };
 
-// // src/Api/Api.js
-// // src/Api/Api.js
 // export const createWebData = async (data: any) => {
 //   try {
 //     const response = await fetch(`${url}/create-web`, {
@@ -69,24 +103,24 @@ const loadDummyData = () => {
   return data ? JSON.parse(data) : [];
 };
 
-const saveDummyData = (data: any) => {
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
-};
+// const saveDummyData = (data: any) => {
+//   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+// };
 
 let dummyData = loadDummyData();
 
-export const createWebData = async (newOrganization: any) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const id = dummyData.length + 1;
-      const code = Math.floor(100000 + Math.random() * 900000).toString();
-      const newOrgWithId = { id, ...newOrganization, code };
-      dummyData.push(newOrgWithId);
-      saveDummyData(dummyData);
-      resolve(newOrgWithId);
-    }, 500);
-  });
-};
+// export const createWebData = async (newOrganization: any) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       const id = dummyData.length + 1;
+//       const code = Math.floor(100000 + Math.random() * 900000).toString();
+//       const newOrgWithId = { id, ...newOrganization, code };
+//       dummyData.push(newOrgWithId);
+//       saveDummyData(dummyData);
+//       resolve(newOrgWithId);
+//     }, 500);
+//   });
+// };
 
 export const getWebData = async () => {
   return new Promise((resolve) => {
