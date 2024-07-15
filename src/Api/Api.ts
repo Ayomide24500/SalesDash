@@ -52,7 +52,7 @@ export const getOrg = async () => {
 export const CreateOrg = async (data: any) => {
   try {
     const res = await axios.post(
-      "https://go-foods-server.onrender.com/go-foods/organization",
+      "https://go-foods-server.onrender.com/go-foods/organization/create",
       data
     );
     return res.data;

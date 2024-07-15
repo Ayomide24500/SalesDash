@@ -25,3 +25,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #172554;
 }
+
+.loader {
+  border-top-color: #3498db;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -19,8 +19,10 @@ const Login = () => {
     })
       .then((res: any) => {
         if (res) {
-          toast.success("login successfully!");
-          navigate("/dashboard");
+          toast.success("Login successful!");
+          setTimeout(() => {
+            navigate("/dashboard");
+          }, 2000); // Delay the navigation by 2 seconds
         } else {
           setErrorMessage("Failed to login. Please try again.");
         }
@@ -34,7 +36,7 @@ const Login = () => {
   return (
     <div className="bg-red-800 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md lg:w-full w-[85%] max-w-md">
-        <h2 className="lg:text-2xl font-bold mb-4">Login</h2>
+        <h2 className="lg:text-2xl text-xl font-bold mb-4">Login</h2>
         <form onSubmit={handleSubmiteNow}>
           <div className="mb-4">
             <label className="block text-gray-700">Email</label>

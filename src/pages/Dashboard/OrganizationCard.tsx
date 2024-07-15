@@ -1,4 +1,3 @@
-// src/components/OrganizationCard.js
 import React, { useState, FC } from "react";
 
 interface iProp {

@@ -11,7 +11,7 @@ const Register = () => {
   const [accessCode, setAccessCode] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmiteNow = (e: any) => {
+   const handleSubmiteNow = (e: any) => {
     e.preventDefault();
 
     updatePass({
@@ -20,7 +20,7 @@ const Register = () => {
       newPassword: newPassword,
     })
       .then((res: any) => {
-        if (res) {
+        if (res.success) { 
           toast.success("Password updated successfully!");
           navigate("/login");
         } else {
