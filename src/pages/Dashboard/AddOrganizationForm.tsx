@@ -3,7 +3,6 @@ import { CreateOrg } from "../../Api/Api";
 import { Toaster, toast } from "react-hot-toast";
 
 interface iProp {
-  show: any;
   onClose: any;
 }
 

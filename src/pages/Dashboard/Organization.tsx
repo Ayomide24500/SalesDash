@@ -1,7 +1,7 @@
 // src/components/Organization.js
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
-import { getOrg } from "../../Api/Api"; // Updated to use getOrg instead of getWebData
+import { getOrg } from "../../Api/Api";
 import AddOrganizationForm from "./AddOrganizationForm";
 import OrganizationCard from "./OrganizationCard";
 import { changeToggleDisplay } from "../../global/reduxState";
